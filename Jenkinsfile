@@ -21,7 +21,7 @@ pipeline{
                sh 'mkdir docker'
                sh 'cp Dockerfile docker/'
                sh 'cp webapp/target/webapp.war docker/webapp.war'
-               sh 'cd docker/'
+               sh 'cd /var/lib/jenkins/workspace/pipeline-2/docker'
                sh 'pwd'
                /*sh 'docker build -t web:latest  . '*/
                sh 'echo done'
