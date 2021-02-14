@@ -23,7 +23,7 @@ pipeline{
                sh 'cp webapp/target/webapp.war docker/webapp.war'
                sh 'cd ./docker/'
                sh 'pwd'
-               /*sh 'docker build -t web:latest . '*/
+               sh 'docker build -t web:latest  -f ./docker/Dockerfile '
                sh 'echo done'
                /*sh 'mkdir docker'
                sh 'webapp/target/*.war docker/' */
