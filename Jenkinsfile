@@ -20,6 +20,7 @@ pipeline{
                sh 'whoami'
                sh 'mkdir docker'
                sh 'cp Dockerfile docker/'
+               sh 'cp webapp/target/webapp.war docker/webapp.war'
                sh 'echo done'
                /*sh 'mkdir docker'
                sh 'webapp/target/*.war docker/' */
