@@ -17,7 +17,7 @@ pipeline{
         }
         stage("run a docker image"){
             steps{
-               sh 'rf -rf docker/'
+               sh 'rm -rf docker/'
                sh 'mkdir docker'
                sh 'cp Dockerfile docker/'
                sh 'cp webapp/target/webapp.war docker/webapp.war'
