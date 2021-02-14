@@ -17,7 +17,8 @@ pipeline{
         }
         stage("run a docker image"){
             steps{
-               sh 'ls -la webapp/target/ '
+               sh 'mkdir docker'
+               sh 'webapp/target/*.war docker/'
             }
         }    
     }
