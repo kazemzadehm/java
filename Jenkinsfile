@@ -21,9 +21,9 @@ pipeline{
                sh 'mkdir docker'
                sh 'cp Dockerfile docker/'
                sh 'cp webapp/target/webapp.war docker/webapp.war'
-               sh 'cd ./docker/'
+               cd docker/
                sh 'pwd'
-               sh 'docker build -t web:latest  -f ./docker/Dockerfile '
+               /*sh 'docker build -t web:latest  . '*/
                sh 'echo done'
                /*sh 'mkdir docker'
                sh 'webapp/target/*.war docker/' */
