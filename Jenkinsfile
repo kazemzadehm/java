@@ -18,6 +18,7 @@ pipeline{
         stage("run a docker image"){
             steps{
                sh 'whoami'
+               sh 'mkdir docker'
                /*sh 'mkdir docker'
                sh 'webapp/target/*.war docker/' */
             }
