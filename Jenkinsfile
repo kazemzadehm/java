@@ -27,6 +27,7 @@ pipeline{
                     sh 'docker push kazemzadeh/web:latest'
                     sh 'docker image rm kazemzadeh/web:latest'
                 }
+                sh 'echo SUCCESSFULL'
             }
         }    
     }
