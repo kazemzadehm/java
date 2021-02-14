@@ -15,6 +15,10 @@ pipeline{
                 sh 'mvn clean install'
             }   
         }
+        stage("run a docker image")
+            steps{
+                sh 'docker pull alpine'
+            }
     }
 
 }
