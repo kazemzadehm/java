@@ -4,7 +4,7 @@ pipeline{
         PATH="/opt/maven/maven/bin:$PATH"
     }
     stages{
-        stage("Git Clone"){
+        stage("Clone Repository"){
             steps{
                 git 'https://github.com/kazemzadehm/java.git'
             }    
