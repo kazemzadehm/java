@@ -25,7 +25,7 @@ pipeline{
                     sh 'docker build -t kazemzadeh/web:latest .'
                     sh 'docker login -u kazemzadeh -p Arya@123456'
                     sh 'docker push kazemzadeh/web:latest'
-                    sh 'docker image kazemzadeh/web:latest'
+                    sh 'docker image rm kazemzadeh/web:latest'
                 }
             }
         }    
