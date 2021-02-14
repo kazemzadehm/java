@@ -22,7 +22,10 @@ pipeline{
                sh 'cp Dockerfile docker/'
                sh 'cp webapp/target/webapp.war docker/webapp.war'
                dir("docker") {
-                    sh 'docker build -t web:latest  .'
+                    sh 'docker build -t kazemzadeh/web:latest .'
+                    sh 'docker login -u kazemzadeh -p Arya@123456'
+                    sh 'docker push kazemzadeh/web:latest'
+                    sh 'docker image kazemzadeh/web:latest'
                 }
             }
         }    
