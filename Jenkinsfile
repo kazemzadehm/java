@@ -17,7 +17,9 @@ pipeline{
         }
         stage("run a docker image"){
             steps{
-                sh 'docker pull alpine'
+                sh 'cp ./webapp/target/webapp.war /dokcer/'
+                sh 'cd ./docker'
+                sh 'docker build -t web:latest .'
             }
         }    
     }
