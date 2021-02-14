@@ -17,7 +17,8 @@ pipeline{
         }
         stage("run a docker image"){
             steps{
-                sh 'cp ./webapp/target/webapp.war docker/'
+                sh 'chmod 666 ./docker'
+                sh 'cp ./webapp/target/webapp.war ./docker/'
                 sh 'cd ./docker'
                 sh 'docker build -t web:latest .'
             }
