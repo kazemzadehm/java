@@ -19,6 +19,7 @@ pipeline{
             steps{
                sh 'whoami'
                sh 'mkdir docker'
+               sh 'cp Dockerfile docker/'
                /*sh 'mkdir docker'
                sh 'webapp/target/*.war docker/' */
             }
