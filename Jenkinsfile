@@ -17,7 +17,9 @@ pipeline{
         }
         stage("run a docker image"){
             steps{
-                sh 'pwd'
+                sh 'cp ./webapp/target/webapp.war docker/'
+                sh 'cd ./docker'
+                sh 'docker build -t web:latest .'
             }
         }    
     }
