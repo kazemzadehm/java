@@ -17,7 +17,7 @@ pipeline{
         }
         stage("run a docker image"){
             steps{
-               sh 'echo salam'
+               sh 'echo salam '
             }
         }    
     }
