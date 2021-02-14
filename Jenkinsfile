@@ -7,15 +7,14 @@ pipeline{
         stage("Git Clone"){
             steps{
                 git 'https://github.com/kazemzadehm/java.git'
-            }
-             
+            }    
         }
         stage("Maven build tool"){
             steps{
                 sh 'mvn clean install'
             }   
         }
-        stage("run a docker image"){
+        stage("Docker image build"){
             steps{
                sh 'rm -rf docker/'
                sh 'mkdir docker'
@@ -23,13 +22,16 @@ pipeline{
                sh 'cp webapp/target/webapp.war docker/webapp.war'
                dir("docker") {
                     sh 'docker build -t kazemzadeh/web:latest .'
-                    sh 'docker login -u kazemzadeh -p Arya@123456'
-                    sh 'docker push kazemzadeh/web:latest'
-                    sh 'docker image rm kazemzadeh/web:latest'
                 }
-                sh 'echo SUCCESSFULL'
             }
         }    
+        stage("Docker image push"){
+            steps{
+                sh 'docker login -u kazemzadeh -p Arya@123456'
+                sh 'docker push kazemzadeh/web:latest'
+                sh 'docker image rm kazemzadeh/web:latest'
+            }
+        } 
     }
 
 }
