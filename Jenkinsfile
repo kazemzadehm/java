@@ -34,8 +34,7 @@ pipeline{
         }
         stage("archive artifacts"){
             steps{
-                /*archiveArtifacts artifacts: '/webapp/target/webapp.war', followSymlinks: false*/
-                sh 'echo salam'
+                archiveArtifacts artifacts: '/webapp/target/webapp.war', followSymlinks: false
             }
         }
     }
