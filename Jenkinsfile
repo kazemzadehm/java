@@ -31,7 +31,12 @@ pipeline{
                 sh 'docker push kazemzadeh/web:latest'
                 sh 'docker image rm kazemzadeh/web:latest'
             }
-        } 
+        }
+        stage("archive artifacts"){
+            steps{
+                archiveArtifacts artifacts: '/webapp/target/webapp.war', followSymlinks: false
+            }
+        }
     }
 
 }
